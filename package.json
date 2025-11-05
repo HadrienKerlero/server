@@ -51,13 +51,13 @@
     "name": "Johan Legrand",
     "email": "johan.legrand@sync-in.com"
   },
-  "homepage": "https://github.com/Sync-in/server#readme",
+  "homepage": "https://github.com/HadrienKerlero/server#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sync-in/server.git"
+    "url": "git+https://github.com/HadrienKerlero/server.git"
   },
   "bugs": {
-    "url": "https://github.com/Sync-in/server/issues"
+    "url": "https://github.com/HadrienKerlero/server/issues"
   },
   "license": "AGPL-3.0-or-later",
   "private": true,
@@ -82,7 +82,7 @@
     "start": "node dist/server/main.js",
     "reset": "rm -Rf frontend/node_modules frontend/.angular backend/node_modules node_modules .angular; npm cache clean --force",
     "docker:build": "docker build -t $npm_package_name .",
-    "docker:buildx": "docker buildx build --platform linux/arm64,linux/amd64 --tag syncin/server:latest --tag syncin/server:${npm_package_version} --tag syncin/server:$(echo ${npm_package_version} | cut -d. -f1) . --push",
+    "docker:buildx": "docker buildx build --platform linux/arm64,linux/amd64 --tag hkerlero/server:latest --tag hkerlero/server:${npm_package_version} --tag hkerlero/server:$(echo ${npm_package_version} | cut -d. -f1) . --push",
     "docker:start": "docker run --name sync-in -it --rm -e SKIP_INIT=true -p 8080:8080 -v ./environment/environment.yaml:/app/environment/environment.yaml $npm_package_name"
   },
   "devDependencies": {
