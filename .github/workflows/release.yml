@@ -1,8 +1,8 @@
 name: Release Workflow
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - 'main'
 jobs:
   create-release:
     runs-on: ubuntu-latest
