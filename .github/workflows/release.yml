@@ -35,18 +35,6 @@ jobs:
       - name: Docker Build & Push (multi-arch)
         run: npm run docker:buildx
 
-      # Publish to NPM
-      - name: Setup Node for npmjs
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: 'https://registry.npmjs.org/'
-      - name: Publish to npmjs.org
-        working-directory: release/sync-in-server
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
-
       - name: Extract changelog for current version
         id: changelog
         run: |
